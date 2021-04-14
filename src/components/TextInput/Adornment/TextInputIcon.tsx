@@ -9,10 +9,25 @@ type Props = $Omit<
   React.ComponentProps<typeof IconButton>,
   'icon' | 'theme'
 > & {
+  /**
+   * Icon to show.
+   */
   name: IconSource;
+  /**
+   * Function to execute on press.
+   */
   onPress?: () => void;
+  /**
+   * Whether the TextInput will focus after onPress
+   */
   forceTextInputFocus?: boolean;
+  /**
+   * Style that is passed to the wrapping View element.
+   */
   style?: StyleProp<ViewStyle>;
+  /**
+   * @optional
+   */
   theme?: ReactNativePaper.Theme;
 };
 
@@ -49,6 +64,36 @@ const IconAdornment: React.FunctionComponent<
     <StyleContext.Provider value={contextState}>{icon}</StyleContext.Provider>
   );
 };
+
+/**
+ * A component to render a leading / trailing icon in the TextInput
+ *
+ * <div class="screenshots">
+ *   <figure>
+ *     <img class="medium" src="screenshots/textinput-flat.icon.png" />
+ *   </figure>
+ * </div>
+ *
+ * ## Usage
+ * ```js
+ * import * as React from 'react';
+ * import { TextInput } from 'react-native-paper';
+ *
+ * const MyComponent = () => {
+ *   const [text, setText] = React.useState('');
+ *
+ *   return (
+ *     <TextInput
+ *       label="Password"
+ *       secureTextEntry
+ *       right={<TextInput.Icon name="eye" />}
+ *     />
+ *   );
+ * };
+ *
+ * export default MyComponent;
+ * ```
+ */
 
 const TextInputIcon = ({
   name,
