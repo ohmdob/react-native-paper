@@ -138,7 +138,6 @@ const ListAccordion = ({
   theme,
   titleStyle,
   descriptionStyle,
-  titleNumberOfLines = 1,
   descriptionNumberOfLines = 2,
   style,
   id,
@@ -199,7 +198,9 @@ const ListAccordion = ({
               })
             : null}
           <View style={[styles.item, styles.content]}>
-            {title}
+            <View style={titleStyle}>
+              {title}
+            </View>
             {description && (
               <Text
                 selectable={false}
