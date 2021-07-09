@@ -950,7 +950,7 @@ const styles = StyleSheet.create({
     flex: 1,
     // Top padding is 6 and bottom padding is 10
     // The extra 4dp bottom padding is offset by label's height
-    paddingVertical: 6,
+    paddingVertical: 0,
   },
   ripple: {
     position: 'absolute',
@@ -958,7 +958,7 @@ const styles = StyleSheet.create({
   iconContainer: {
     height: 24,
     width: 24,
-    marginTop: 2,
+    marginTop: 0,
     marginHorizontal: 12,
     alignSelf: 'center',
   },
